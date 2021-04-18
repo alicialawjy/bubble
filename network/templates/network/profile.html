@@ -1,0 +1,44 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <div id='profile_header'>
+        <h1>{{ profile_owner.first_name }} {{ profile_owner.last_name }}</h1>
+        @<span id='profile_owner'>{{ profile_owner.username }}</span> · Joined {{ profile_owner.date_joined|date:'F Y' }} <br><br>
+        <b id='profile_follower'>{{ profile_owner.follower.count }}</b> Followers <b id='profile_following'>{{ profile_owner.following.count }}</b> Following <br><br>
+        {% if user.is_authenticated %}    
+            {% if profile_owner.username != user.username %}
+                {% if profile_owner in user.relationship.all %}
+                <button class='custom_button' id='follow_button'>Unfollow</button>
+                {% else %}
+                <button class='custom_button' id='follow_button'>Follow</button>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <h3>Bubbles</h3>
+    <div class='post_view'>
+        {% for post in posts %}
+        <div class='post' data-post_id='{{ post.id }}'>
+            <a href="{% url 'user_profile' post.author.username %}">
+                <b class='post_name'>{{ post.author.first_name }} {{ post.author.last_name }}</b>
+            </a> @{{ post.author.username }} • {{ post.time }} 
+            {% if profile_owner.username == user.username %}
+            <button class='edit_button' data-post_id='{{ post.id }}'>Edit</button>
+            {% endif %}
+            <p  id='post_content{{ post.id }}'>{{ post.content }}</p> 
+            <div>
+                {% if user in post.liked_by.all %}
+                <img src="http://clipart-library.com/images_k/heart-icon-transparent-background/heart-icon-transparent-background-8.png" class='heart_icon' data-post_id="{{ post.id }}" data-liked='true'>
+                {% else %}
+                <img src="http://clipart-library.com/images_k/heart-icon-transparent-background/heart-icon-transparent-background-8.png" class='heart_icon' data-post_id="{{ post.id }}" data-liked='false'>
+                {% endif %}
+                <span id='like_count{{ post.id }}'>{{ post.likes }}</span>
+                <img src="https://icons-for-free.com/iconfiles/png/512/comment-131965017416332557.png" class='reply_icon' data-post_id="{{ post.id }}">
+                <span id='reply_count{{ post.id }}'>{{ post.replies.count }}</span>
+            </div> 
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

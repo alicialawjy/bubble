@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Bubble{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'network/styles.css' %}" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'network/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'network/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'network/favicon-16x16.png' %}">
+        <script>
+            var authenticated = '{{ user.is_authenticated }}';
+            var curr_user = '{{ user.username }}';
+        </script>
+        <script src="{% static 'network/network.js' %}"></script>
+    </head>
+    <body>
+        <div class='row'>
+            <div class="sidebar col-lg-3 col-md-4 position">
+                <div id='sticky-sidebar'>
+                    <div>
+                        <a href="{% url 'index' %}">
+                            <img src='https://www.deliciousfilmcatering.com/wp-content/uploads/2016/08/47321620-speech-bubble-sketch-vector-illustration.png' id='twitter_icon'>
+                        </a>
+                    </div>
+                    <form action="{% url 'search' %}" method='post'>
+                        {% csrf_token %}
+                        <input type="text" placeholder='Search Username' name='search' id='search_user'>
+                    </form>
+                    <div class='sidebar_content'>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'user_profile' user.username %}" id='profile_posts'><strong>@{{ user.username }}</strong></a>
+                        {% endif %}
+                    </div>
+                    <div class='sidebar_content'>
+                        <a href="{% url 'index' %}" id='all_posts'>Home</a>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div class='sidebar_content'>
+                        <a href="{% url 'following' %}" id='following_posts'>Following</a>
+                    </div>
+                    <div class='sidebar_content'>
+                        <a href="{% url 'logout' %}">Log Out</a>
+                    </div>
+                    <div class='sidebar_content'>
+                        <button id='new_bubble'>New Bubble</button>
+                    </div>
+                    {% else %}
+                    <div class='sidebar_content'>
+                        <a href="{% url 'login' %}">Log In</a>
+                    </div>
+                    <div class='sidebar_content'>
+                        <a href="{% url 'register' %}">Register</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="main col-lg-6 col-md-4">
+                {% block body %}
+                {% endblock %}
+                <div id='overlay'>
+                    <form id='overlay_form' method='POST'>
+                        {% csrf_token %}
+                        <div id='overlay_border'>
+                            <button type="button" id='close_button'>x</button>
+                            <br><br>
+                            <h1 id='overlay_heading'></h1>
+                            <textarea id='overlay_text' placeholder="What's happening?" rows='10'></textarea>
+                            <input type='submit' value='Post' class='custom_button' id='overlay_button'>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </body>
+</html>

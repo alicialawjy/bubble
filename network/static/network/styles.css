@@ -1,0 +1,350 @@
+/*/////////////////////////////////////////////////*/
+/*                  General styling                */
+/*/////////////////////////////////////////////////*/
+body{
+    max-width: 99%;
+    overscroll-behavior: none;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.main {
+    padding: 10px;
+    border-left:1px solid gray;
+    border-right:1px solid gray;
+}
+
+h1,h3,h4 {
+    color: rgb(8, 160,233)!important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.example::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+/*/////////////////////////////////////////////////*/
+/*                  Sidebar styling                */
+/*/////////////////////////////////////////////////*/
+.sidebar {
+    height: 100vh;
+    font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+/*------------  Individual Sidebar Elements -------------*/
+.sidebar_content a {
+    text-decoration:none;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 12px;
+}
+
+.sidebar_content a:hover {
+    text-decoration: none;
+    color: rgb(8,160,233);
+    font-size: 25px;
+    font-weight: bold;
+    border-radius:25px;
+    padding: 12px;
+    background-color:  rgb(232,245,253);
+}
+
+.sidebar div{
+    margin-top: 25px;
+}
+
+/*------------  Make sure sidebar fixed -------------*/
+.sidebar #sticky-sidebar {
+    position:fixed;
+    width: 20%;
+}
+
+/*--------------------  Search Field -----------------*/
+.sidebar #search_user {
+    padding: 8px;
+    border-radius: 25px;
+    margin: 12px;
+    text-indent: 10px;
+}
+
+/*--------------- New Post button (sidebar) ------------------*/
+#new_bubble{
+    color:white;
+    background-color:rgba(8, 162, 233, 0.795);
+    border-radius:50px;
+    border: 2px rgb(0,132,180) solid;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px;
+    width:190px;
+}
+
+#new_bubble:hover {
+    box-shadow: 2px 2px rgb(0,132,180);
+}
+
+/*/////////////////////////////////////////////////*/
+/*                  New Post styling               */
+/*/////////////////////////////////////////////////*/
+#new_post {
+    padding: 10px;
+    border-bottom: 1px black solid;
+    width: 99%;
+}
+
+textarea {
+    width: 100%
+}
+
+/*/////////////////////////////////////////////////*/
+/*            Individual Post Styling              */
+/*/////////////////////////////////////////////////*/
+.post{
+    position:relative;
+    padding: 10px;
+    border-top: 1px solid black;
+}
+
+.post:hover {
+    background-color: rgb(232,245,253);
+}
+
+.post_view{
+    border-top: 1px solid rgb(8,160,233);
+}
+
+/*------------------  Author Name -----------------*/
+a .post_name {
+    color: black;
+    font-size:20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*/////////////////////////////////////////////////*/
+/*               Profile Page Styling              */
+/*/////////////////////////////////////////////////*/
+#profile_name {
+    font-size:40px;
+    color: rgb(8,160,233);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#profile_header {
+    padding: 10px;
+}
+
+/*///////////////////////////////////////////////////*/
+/*     Overlay Page Styling (For new post/edit)      */
+/*///////////////////////////////////////////////////*/
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#overlay_border {
+    border: 3px solid rgb(0,132,180);
+    border-radius: 20px;
+    position: absolute;
+    width:35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 20px;
+}
+
+#overlay_border #overlay_text {
+    width: 100%; 
+}
+
+#overlay_border #overlay_button {
+    position: relative;
+}
+
+/*///////////////////////////////////////////////////*/
+/*              Search Page Styling                  */
+/*///////////////////////////////////////////////////*/
+.search_results_link {
+    text-decoration: none! important;
+}
+
+.search_results_link .potential_user {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    border-top: 1px black solid;
+    padding: 10px;
+}
+
+/*/////////////////////////////////////////////////*/
+/*            Individual Post styling              */
+/*/////////////////////////////////////////////////*/
+#main_post_content {
+    font-size: 30px;
+}
+
+#main_buttons {
+    border-top: 1px solid rgb(0,132,180);
+    border-bottom: 1px solid rgb(0,132,180);
+    height: 50px;
+    padding: 5px;
+    font-size:20px;
+}
+
+
+/*/////////////////////////////////////////////////*/
+/*                   Login Page                    */
+/*/////////////////////////////////////////////////*/
+#login_form{
+    height: 100%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.form_field {
+    width: 280px;
+    height: 50px;
+    padding: 5px;
+    text-indent: 10px;
+}
+
+#login_header {
+    font-weight: bolder;
+}
+
+.login_button{
+    color:rgb(8,160,233);
+    background-color: white;
+    border-radius:25px;
+    border: 2px rgb(0,132,180) solid;
+    padding: 5px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    width: 280px;
+}
+
+.login_button:hover {
+    box-shadow: 2px 2px rgb(0,132,180);
+    background-color:rgb(8,160,233);
+    color: white;
+}
+
+/*/////////////////////////////////////////////////*/
+/*                All button styling               */
+/*/////////////////////////////////////////////////*/
+
+/*----------------  Most buttons   ----------------*/
+.custom_button{
+    color:rgb(8,160,233);
+    background-color: white;
+    border-radius:25px;
+    border: 2px rgb(0,132,180) solid;
+    padding: 5px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    justify-content: right;
+}
+
+.custom_button:hover {
+    box-shadow: 2px 2px rgb(0,132,180);
+    background-color:rgb(8,160,233);
+    color: white;
+}
+
+.custom_button:disabled {
+    color:rgba(255, 255, 255, 0.788);
+    background-color:rgba(8, 162, 233, 0.795);
+    border-radius:25px;
+    border: 2px rgba(0, 132, 180, 0.651) solid;
+    padding: 5px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    justify-content: right;
+    box-shadow: none;
+}
+
+/*--------------------- Edit button ----------------------*/
+.edit_button{
+    color:rgb(8,160,233);
+    background-color: white;
+    border-radius:20px;
+    border: 2px rgb(0,132,180) solid;
+    padding: 5px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    position:absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.edit_button:hover {
+    box-shadow: 2px 2px rgb(0,132,180);
+    background-color:rgb(8,160,233);
+    color: white;
+}
+
+/*---------------------- X button ------------------------*/
+#close_button {
+    color:rgb(8,160,233);
+    font-size: 25px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background-color: white;
+    border:none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#close_button:hover {
+    background-color: rgb(232,245,253);
+}
+
+/*---------------------- Like button ---------------------*/
+.heart_icon {
+    width:30px; 
+    height:30px;
+    border-radius: 50%;
+    padding:5px;
+}
+
+.heart_icon:hover {
+    border: 2px solid rgb(245, 126, 146);
+}
+
+
+/*---------------------- Reply Icon ------------------------*/
+.reply_icon {
+    width:30px; 
+    height:30px;
+    border-radius: 50%;
+    margin-left:10px;
+}
+
+.reply_icon:hover {
+    border: 2px rgb(0,132,180) solid;
+}
+
+/*------------------------- Logo --------------------------*/
+#twitter_icon {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+#twitter_icon:hover {
+    background-color:rgb(232,245,253) ;
+}

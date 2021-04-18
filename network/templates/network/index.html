@@ -1,0 +1,42 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+    <form id='new_post' method='POST'>
+        {% csrf_token %}
+        <h3>New Post</h3>
+        <textarea name='new' placeholder="What's happening?" rows='5' id='textarea_new'></textarea>
+        <input type='submit' value='Post' class='custom_button' id='submit_new'>
+        <br><br>
+    </form>
+    {% endif %}
+    <br>
+    <h1>{{ view_for }}</h1>
+    <div id='post_view'>
+        {% for post in posts %}
+        <div class='post' data-post_id='{{ post.id }}'>
+            <a href="{% url 'user_profile' post.author.username %}">
+                <b class='post_name'>{{ post.author.first_name }} {{ post.author.last_name }}</b>
+            </a> @{{ post.author.username }} • {{ post.time }} 
+            {% if post.author.username == user.username %}
+            <button class='edit_button' data-post_id='{{ post.id }}'>Edit</button>
+            {% endif %}
+            <p  id='post_content{{ post.id }}'>{{ post.content }}</p> 
+            <div>
+                {% if user in post.liked_by.all %}
+                <img src="http://clipart-library.com/images_k/heart-icon-transparent-background/heart-icon-transparent-background-8.png" class='heart_icon' data-post_id="{{ post.id }}" data-liked='true'>
+                {% else %}
+                <img src="http://clipart-library.com/images_k/heart-icon-transparent-background/heart-icon-transparent-background-8.png" class='heart_icon' data-post_id="{{ post.id }}" data-liked='false'>
+                {% endif %}
+                <span id='like_count{{ post.id }}'>{{ post.likes }}</span>
+                <img src="https://icons-for-free.com/iconfiles/png/512/comment-131965017416332557.png" class='reply_icon' data-post_id="{{ post.id }}">
+                <span id='reply_count{{ post.id }}'>{{ post.replies.count }}</span>
+            </div> 
+        </div>  
+        
+        {% empty %}
+        Looks like you haven't followed anyone. Let's start by following some people!
+        {% endfor %}
+    </div>
+
+{% endblock %}

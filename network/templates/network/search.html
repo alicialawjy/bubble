@@ -1,0 +1,21 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+
+<h1>Search Results</h1>
+<div id='search_results'>
+    {% for user in potential %}
+    <a href="{% url 'user_profile' user.username %}" class='search_results_link'>
+        <div class='potential_user'>
+            <b class='post_name'>{{ user.first_name }} {{ user.last_name }}</b>
+            <br>
+            @{{ user.username }}
+        </div>
+    </a>
+    {% empty%}
+    No results found :(
+    {% endfor %}
+</div>
+
+{% endblock %}
