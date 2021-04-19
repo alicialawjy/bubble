@@ -8,10 +8,10 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 3. Run ```python manage.py runserver``` and visit <a>http://127.0.0.1:8000/</a>
 
 ## Tech Stack
-- Backend Framework: Django
+- Backend Framework: Django and Python
 - Database Modelling: SQLite
-- Python
-- HTML, CSS and Javascript
+- Front End Languages: HTML, CSS and Javascript
+- Browser Testing: Selenium
 
 ## Functionality
 * Note: user needs to be logged in to experience these functionalities.
@@ -80,7 +80,7 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 7. <b>Register</b>
 
 ## Unit Testing
-Unit tests have been implemented to test the methods (in views.py) and model fields (in models.py). Selenium has been used to test JavaScript methods. 
+Unit tests have been implemented for Django/Client testing (testing the methods in views.py and model fields in models.py). Selenium has been used for browser testing (assessing JavaScript methods). 
 These tests are saved under the test.py file in the network folder. <br>
 To run the unit tests:
 1. In your terminal, cd into the 'Bubble' directory.
