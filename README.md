@@ -10,35 +10,35 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 ## Functionality
 * Note: user needs to be logged in to experience these functionalities.
 1. <b>New Post</b>
-- Users can make new post from the home page and following page.
-- Alternatively, they can also do so with the 'New Bubble' button on the sidebar.
+- Via home page and following page.
+- Alternatively, use the 'New Bubble' button on the sidebar.
 - Submit button is disabled if textarea is empty to prevent submission of an empty post.
 <br>
 
-2. <b>Edit</b>
-- Users can edit a post via the 'Edit' button on each post, which will only be visible if the post is originated by the user (users are only allowed to edit their own posts).
+2. <b>Edit Post</b>
+- Via the 'Edit' button on each post, which will only be visible if the post is originated by the user (users are only allowed to edit their own posts).
 - The content of that post will be preloaded into the textarea for the user to edit.
 <br>
 
-3. <b>Reply</b>
-- Users can reply to a post by clicking on the reply icon at the bottom of each post.
+3. <b>Reply to Post</b>
+- Click the reply icon at the bottom of each post.
 - Once replied, this is recorded as a reply to the main post:
   - the main post's reply count increases, and
   - the reply will be visible in the individual post's view (can be viewed by clicking on the main post).
 <br>
 
-4. <b>Like</b>
-- Users can like a post once by clicking on the heart icon at the bottom of each post.
+4. <b>Like a Post</b>
+- Click the heart icon at the bottom of each post.
 - If the post has been liked, clicking on the button again will cause the user to un-like the post.
 - Like count changes accordingly
 <br>
 
-5. <b>Follow</b>
+5. <b>Follow a User</b>
 - Users can follow/unfollow each other via the 'follow'/'unfollow' buttons on user profile pages.
 - Users are not allowed to follow themselves.
 <br>
 
-6. <b>Search</b>
+6. <b>Search a User</b>
 - Users can search for other users via the search bar.
 - The search goes through the username database.
 - If the query is an exact match with a username in the database, the user is redirected to the profile page of the person they were looking for.
