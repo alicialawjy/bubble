@@ -7,6 +7,12 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 2. In your terminal, cd into the Bubble directory.
 3. Run ```python manage.py runserver``` and visit <a>http://127.0.0.1:8000/</a>
 
+## Tech Stack
+- Backend Framework: Django
+- Database Modelling: SQLite
+- Python
+- HTML, CSS and Javascript
+
 ## Functionality
 * Note: user needs to be logged in to experience these functionalities.
 1. <b>New Post</b>
@@ -73,9 +79,5 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 
 7. <b>Register</b>
 
-## Tech Stack
-- Backend Framework: Django
-- Database Modelling: SQLite
-- Python
-- HTML, CSS and Javascript
+
 
