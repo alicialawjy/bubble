@@ -48,14 +48,15 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 ## Page Views
 #### 1. Profile Page
 - This can be accessed by clicking on a user's name on any post, or searching for a user via the search bar.
-- Shows only posts made by the current user, in reverse chronological order.
+- Current user can also navigate to their own profile via the sidebar.
+- Shows only posts made by profile owner, in reverse chronological order.
 
 #### 2. Home
 - This shows all the posts by <b>every</b> user on the platform in reverse chronological order.
 - Is visible even when users are not logged in.
 
 #### 3. Following
-- This shows only posts by people that the current user follows in reverse chronological order..
+- This shows only posts by people that the current user follows in reverse chronological order.
 
 #### 4. Individual posts
 - Clicking anywhere on a post will bring the user to the individual post view.
