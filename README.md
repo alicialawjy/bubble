@@ -41,7 +41,7 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 
 5. <b>Follow a User</b>
 - Users can follow/unfollow each other via the 'follow'/'unfollow' buttons on user profile pages.
-- Users are not allowed to follow themselves.
+- If the current user is on their own profile, the follow button will not be visible in their page (users cannot follow themselves).
 <br>
 
 6. <b>Search a User</b>
@@ -53,8 +53,7 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 ## Page Views
 1. <b>Profile Page</b>
 - This can be accessed by clicking on a user's name on any post, or searching for a user via the search bar.
-- Shows only posts made by the user, in reverse chronological order.
-- If the profile belongs to the current user, the follow button will not be visible in the profile (user cannot follow themselves).
+- Shows only posts made by the current user, in reverse chronological order.
 <br>
 
 2. <b>Home</b>
@@ -63,12 +62,12 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 <br>
 
 3. <b>Following</b>
-- This shows only posts by people that the current user follows.
+- This shows only posts by people that the current user follows in reverse chronological order..
 <br>
 
 4. <b>Individual posts</b>
 - Clicking anywhere on a post will bring the user to the individual post view.
-- Shows the post itself, as well as replies (if any).
+- Shows the post itself, as well as replies to the post (if any).
 <br>
 
 5. <b>Search results page</b>
