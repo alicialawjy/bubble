@@ -15,7 +15,7 @@ This project was done as part of the Harvard x EdX Course: CS50 Web Programming 
 
 ## Functionality
 !!! Note: user needs to be logged in to experience these functionalities.
-#### 1. New Post
+#### 1. Make a New Post
 - Via home page and following page.
 - Alternatively, use the 'New Bubble' button on the sidebar.
 - Submit button is disabled if textarea is empty to prevent submission of an empty post.
