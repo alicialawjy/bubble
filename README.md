@@ -1,3 +1,5 @@
+![Header](https://github.com/alicialawjy/Bubble/blob/main/Screenshots/Home.png)
+
 # Bubble 
 A twitter-like social network website! <br>
 This project was done as part of the Harvard x EdX Course: CS50 Web Programming with Python and JavaScript.

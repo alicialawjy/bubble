@@ -44,12 +44,8 @@ h1,h3,h4 {
 }
 
 .sidebar_content a:hover {
-    text-decoration: none;
     color: rgb(8,160,233);
-    font-size: 25px;
-    font-weight: bold;
     border-radius:25px;
-    padding: 12px;
     background-color:  rgb(232,245,253);
 }
 
